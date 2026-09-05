@@ -1,0 +1,25 @@
+# Bloco para o nginx do HOST (vps-qminc), a cargo do chat de infra.
+# Certificado: certbot --nginx -d oledsmith.com.br -d www.oledsmith.com.br
+# Depois o certbot reescreve este bloco com o listen 443.
+
+server {
+    listen 80;
+    server_name oledsmith.com.br www.oledsmith.com.br;
+
+    # www -> sem www
+    if ($host = www.oledsmith.com.br) { return 301 https://oledsmith.com.br$request_uri; }
+
+    location / {
+        proxy_pass http://127.0.0.1:8090;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Cabeçalhos de segurança. O site só carrega fontes do Google e o próprio JS/CSS.
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options DENY always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-ancestors 'none'; base-uri 'self'" always;
+}

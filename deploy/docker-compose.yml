@@ -1,0 +1,16 @@
+# Site estático da Oledsmith num nginx mínimo. Sem banco, sem Django, sem Celery.
+# O nginx do HOST faz o proxy de oledsmith.com.br para 127.0.0.1:8090 e cuida do
+# certificado (ver nginx-host.conf.example). Atualizar o site = git pull; o
+# container serve os arquivos direto da pasta, sem reiniciar.
+services:
+  oledsmith_web:
+    image: nginx:1.27-alpine
+    container_name: oledsmith_web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8090:80"
+    volumes:
+      - ../docs:/usr/share/nginx/html:ro
+      - ./nginx-site.conf:/etc/nginx/conf.d/default.conf:ro
+    environment:
+      TZ: America/Sao_Paulo
