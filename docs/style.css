@@ -177,6 +177,8 @@ footer a:hover { color: var(--accent); }
 
 @media (max-width: 640px) {
     .menu { display: none; }
+    .kicker { font-size: 11px; letter-spacing: 2.5px; }
+    .kicker::after { content: none; }   /* o traço de fechamento quebrava linha no celular */
     .hero { padding: 60px 0 48px; }
     section { padding: 48px 0; }
 }
