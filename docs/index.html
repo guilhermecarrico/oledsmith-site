@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="tema.js"></script>
+    <script src="form.js" defer></script>
     <title>Oledsmith — sites e sistemas sob medida</title>
     <meta name="description" content="Site que traz cliente e sistema que organiza o dia, sob medida para o seu negócio. Escopo, preço e prazo fechados antes de começar. Feito por quem mantém os próprios produtos no ar.">
     <meta name="robots" content="index, follow">
@@ -229,7 +230,7 @@
             </div>
 
             <div class="proof mt">
-                <p><strong>Precisa de uma coisa só?</strong> Uma integração, um relatório, um robô de WhatsApp, uma rotina que hoje é feita à mão: <strong>recurso pontual a partir de R$ 1.700</strong>, pronto em uma semana. Para quem já tem sistema — inclusive quem usa o Frankz e quer algo que ele ainda não faz.</p>
+                <p><strong>Precisa de uma coisa só?</strong> Uma integração, um relatório, uma rotina que hoje é feita à mão: <strong>recurso pontual a partir de R$ 1.700</strong>, pronto em uma semana. Para quem já tem sistema — inclusive quem usa o Frankz e quer algo que ele ainda não faz.</p>
             </div>
             <h3 class="h3-sub">Cuidado mensal, opcional — depois dos 90 dias incluídos</h3>
             <p class="sub">Hospedagem no nosso servidor, cópia de segurança todo dia, certificado, atualizações de segurança e monitoramento. Defeito no que foi entregue é corrigido sem custo em qualquer plano. Cancela quando quiser, com 30 dias de aviso, e leva o código e os dados.</p>
@@ -306,18 +307,57 @@
 
     <section id="contato" class="final">
         <div class="wrap">
-            <h2>Conta o seu caso em uma frase</h2>
-            <p class="sub">Quem responde é <strong>o Guilherme</strong>, em pessoa, de segunda a sexta, das 9h às 18h. Se não for para a gente, a gente diz — e, quando der, indica quem faz.</p>
-            <div class="ctas">
-                <a class="btn primary" href="https://wa.me/5532999171514?text=Ol%C3%A1!%20Vim%20do%20site%20da%20Oledsmith.%20Preciso%20de%3A%20" rel="noopener">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-                    +55 32 99917-1514
-                </a>
-                <a class="btn" href="mailto:contato@oledsmith.com.br">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-                    contato@oledsmith.com.br
-                </a>
-            </div>
+            <h2>Conta o seu caso</h2>
+            <p class="sub">Seis campos. Você escreve, confere e manda pelo seu WhatsApp ou pelo seu e-mail: nada sai
+            daqui sozinho. Quem responde é <strong>o Guilherme</strong>, em pessoa, de segunda a sexta, das 9h às 18h.
+            Se não for para a gente, a gente diz — e, quando der, indica quem faz.</p>
+
+            <form class="ficha" id="ficha" novalidate>
+                <div class="campo">
+                    <label for="f-nome">Nome</label>
+                    <input type="text" id="f-nome" name="nome" autocomplete="name" placeholder="Como você quer ser chamado" required>
+                </div>
+                <div class="campo">
+                    <label for="f-whats">WhatsApp</label>
+                    <input type="tel" id="f-whats" name="whatsapp" autocomplete="tel" placeholder="32 99999-0000" required>
+                </div>
+                <div class="campo">
+                    <label for="f-email">E-mail <span class="opt">opcional</span></label>
+                    <input type="email" id="f-email" name="email" autocomplete="email" placeholder="voce@seuemail.com.br">
+                </div>
+                <div class="campo">
+                    <label for="f-precisa">O que você precisa</label>
+                    <select id="f-precisa" name="precisa" required>
+                        <option value="">Escolha uma</option>
+                        <option>Uma página que vende</option>
+                        <option>Um site completo</option>
+                        <option>Um recurso em algo que já existe</option>
+                        <option>Um sistema sob medida</option>
+                        <option>Não sei ainda</option>
+                    </select>
+                </div>
+                <div class="campo largo">
+                    <label for="f-negocio">O que o seu negócio faz</label>
+                    <textarea id="f-negocio" name="negocio" rows="3" placeholder="Ex.: clínica de fisioterapia, quatro pessoas, agenda no papel" required></textarea>
+                </div>
+                <div class="campo largo">
+                    <label for="f-indicou">Quem indicou <span class="opt">opcional</span></label>
+                    <input type="text" id="f-indicou" name="indicou" placeholder="Nome de quem falou da gente" maxlength="120">
+                </div>
+
+                <p class="erro mono" id="f-erro" hidden></p>
+
+                <div class="envio">
+                    <a class="btn primary grande" id="f-whatsapp" href="https://wa.me/5532999171514" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                        Continuar no WhatsApp
+                    </a>
+                    <a class="link-email" id="f-email-link" href="mailto:contato@oledsmith.com.br">Prefiro por e-mail</a>
+                </div>
+
+                <p class="nota mono">O botão abre a sua conversa com o resumo já escrito. Você lê, muda o que quiser e
+                aperta enviar. Este site não guarda nada.</p>
+            </form>
         </div>
     </section>
 </main>
@@ -327,7 +367,7 @@
         <div class="row">
             <div>
                 <p><strong style="color: var(--text);">Oledsmith</strong> · Guilherme Carriço d'Angelo · Minas Gerais, Brasil</p>
-                <p>Moldamos produtos para a tela. Este site não usa cookies, formulário nem rastreador. <a href="privacidade.html">Privacidade</a>.</p>
+                <p>Moldamos produtos para a tela. Este site não usa cookies nem rastreador, e o formulário não envia nada sozinho. <a href="privacidade.html">Privacidade</a>.</p>
             </div>
             <p>© 2026 Oledsmith</p>
         </div>
