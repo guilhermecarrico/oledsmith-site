@@ -3,8 +3,10 @@
    (rótulos, números, botões). Nada de brilho, nada de sombra, nada de emoji. */
 :root {
     --bg: #000;
-    --bg-2: #0a0a0a;
-    --bg-3: #111;
+    /* 12/09: cartoes, precos e campos em preto absoluto tambem (decisao do Gui). A separacao
+       vem da borda, nao de um degrau de cinza — pixel apagado e a tese da casa. */
+    --bg-2: #000;
+    --bg-3: #000;
     --line: #222;
     --line-2: #333;
     --text: #e0e0e0;
