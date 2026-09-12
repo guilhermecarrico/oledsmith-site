@@ -31,9 +31,11 @@
     --text: #1a1a1a;
     --text-2: #333;
     --muted: #666;
-    --accent: #0099bb;
-    --accent-rgb: 0, 153, 187;
-    --accent-soft: rgba(0, 153, 187, 0.08);
+    /* Ciano do tema claro escurecido em 12/09: o anterior (#0099bb) dava 3,04:1 sobre o fundo,
+       abaixo do minimo de 4,5:1 para texto pequeno. Este da 4,53:1 e mantem a familia. */
+    --accent: #007a94;
+    --accent-rgb: 0, 122, 148;
+    --accent-soft: rgba(0, 122, 148, 0.08);
     --header: rgba(244, 244, 241, 0.9);
     --grid: rgba(0, 0, 0, 0.06);
     --erro: #c0392b;
@@ -164,7 +166,7 @@ h2 { font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.8px; margin: 0 0 8px;
 .campo { display: flex; flex-direction: column; gap: 6px; }
 .campo.largo { grid-column: 1 / -1; }
 .ficha label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
-.ficha .opt { text-transform: none; letter-spacing: 0; color: var(--line-2); }
+.ficha .opt { text-transform: none; letter-spacing: 0; color: var(--muted); }
 .ficha input, .ficha select, .ficha textarea { width: 100%; padding: 11px 12px; border-radius: 6px; border: 1px solid var(--line-2); background: var(--bg-2); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.5; transition: border-color 0.15s; }
 .ficha input::placeholder, .ficha textarea::placeholder { color: var(--muted); opacity: 0.7; }
 .ficha input:focus, .ficha select:focus, .ficha textarea:focus { outline: none; border-color: var(--accent); }
