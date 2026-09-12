@@ -32,7 +32,7 @@
     function resumo() {
         var linhas = ['Vim do site da Oledsmith.', ''];
         linhas.push('Nome: ' + valor('f-nome'));
-        linhas.push('WhatsApp: ' + valor('f-whats'));
+        if (valor('f-whats')) linhas.push('WhatsApp: ' + valor('f-whats'));
         if (valor('f-email')) linhas.push('E-mail: ' + valor('f-email'));
         linhas.push('O negócio: ' + valor('f-negocio'));
         linhas.push('Preciso de: ' + valor('f-precisa'));
