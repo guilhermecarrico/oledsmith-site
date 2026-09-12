@@ -15,9 +15,11 @@
     var botaoWhats = document.getElementById('f-whatsapp');
     var linkEmail = document.getElementById('f-email-link');
 
+    // Contato nao entra aqui de proposito: quem manda pelo WhatsApp ou pelo e-mail
+    // ja se identifica pelo proprio canal. Exigir o numero fechava a porta de quem
+    // escolhe o e-mail.
     var obrigatorios = [
         ['f-nome', 'o seu nome'],
-        ['f-whats', 'o seu WhatsApp'],
         ['f-negocio', 'o que o seu negócio faz'],
         ['f-precisa', 'o que você precisa']
     ];
