@@ -8,7 +8,7 @@
     var form = document.getElementById('ficha');
     if (!form) return;
 
-    var WHATSAPP = '5532999171514';
+    var WHATSAPP = '5532987068711';
     var EMAIL = 'contato@oledsmith.com.br';
 
     var erro = document.getElementById('f-erro');
